@@ -10,8 +10,9 @@ Tags and releases
 
 Since this project aims to create a Graalvm-equivalent for the upstream Docker image, it also follows the upstream project's tags. As of present, available tags are:
 
-- `2.13-2.7.0` (graalvm ce 20.3.0-java8)
-- `2.13-2.6.0` (graalvm ce 20.2.0-java8)
+- `2.13-2.7.0` (graalvm ce 21.0.0-java8)
+- `2.13-2.6.0` (graalvm ce 21.0.0-java8)
+- `2.13-2.5.1` (graalvm ce 21.0.0-java8)
 
 # How to Run
 
@@ -104,6 +105,6 @@ As you can see above, a environment variale named with `KAFKA_A_B` corresponds t
 To build the image yourself, run following:
 
 ```sh
-export SCALA_VERSION=2.13 && export KAFKA_VERSION=2.7.0 && docker build --build-arg scala_version=${SCALA_VERSION} --build-arg kafka_version=${KAFKA_VERSION} -t dongjinleekr/kafka:${SCALA_VERSION}-${KAFKA_VERSION} .
+SCALA_VERSION=2.13 KAFKA_VERSION=2.7.0 && docker build --build-arg scala_version=${SCALA_VERSION} --build-arg kafka_version=${KAFKA_VERSION} -t dongjinleekr/kafka:${SCALA_VERSION}-${KAFKA_VERSION} .
 ```
 

@@ -1,4 +1,4 @@
-FROM oracle/graalvm-ce:20.3.0-java8
+FROM ghcr.io/graalvm/graalvm-ce:java8-21.0.0
 
 ARG kafka_version=2.7.0
 ARG scala_version=2.13
@@ -40,7 +40,7 @@ COPY start-kafka.sh create-topics.sh /tmp/
 
 COPY kafka_${SCALA_VERSION}-${KAFKA_VERSION} /opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION}
 
-RUN yum install -y hostname docker \
+RUN microdnf install -y hostname docker \
  && chmod a+x /tmp/*.sh \
  && mv /tmp/start-kafka.sh /tmp/create-topics.sh /usr/bin \
  && sync \
